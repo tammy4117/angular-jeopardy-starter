@@ -11,7 +11,6 @@ export class AppComponent implements OnInit {
   title = 'app';
 
   questionInfo;
-  userScore: number = 0;
 
   constructor(private DataService: DataService){}
 
@@ -22,14 +21,6 @@ export class AppComponent implements OnInit {
           this.questionInfo = questionInfo[0];
         }
       )
-  }
-
-  updateDisplay(potato: boolean){
-    if(potato){
-      this.userScore += this.questionInfo.value;
-    }
-    
-    this.getQuestionInfo();
   }
 
   ngOnInit(){

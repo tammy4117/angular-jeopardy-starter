@@ -1,28 +1,23 @@
-# JeopardyLite
+# Jeopardy Starter
+This starter provides a service to talk to the jeopardy api. It already
+displays the results from the api call on the main component.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
+* Display the question, category, and point value, and the users score
+* Provide a way for the user to submit an aswer
+* If the answer is correct then add the point value to the to the users score,
+  If it's wrong, subtract the point value from the users score.
+* After the user answers a question, display another random question from the
+  API.
 
-## Development server
+## Advanced Mode
+Use two components.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Use app.coponent.ts to get and display the data
+* create an answer component to do the scoring and pass the needed data to the parent to update the score display
 
-## Code scaffolding
+## Nightmare Mode
+ Use two components.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Instead of displaying a random question, display 3 random categories.
+* Display the question for the category selected
+* The rest of the application should work the same
