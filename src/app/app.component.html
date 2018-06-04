@@ -1,8 +1,2 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-</div>
-
-<b>The Question:</b> {{questionInfo?.question}} <br>
+<app-gameboard (userGuessed)="updateScore($event)" [childQuestionInfo]="questionInfo" [childTitle]="title" [childScore]="score"></app-gameboard>

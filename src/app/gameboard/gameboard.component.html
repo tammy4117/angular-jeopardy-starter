@@ -1,0 +1,12 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{childTitle}}!!
+  </h1>
+</div>
+
+<b>The Question:</b> {{childQuestionInfo?.question}} <br>
+<b>The Category:</b> {{childQuestionInfo?.category?.title}} <br>
+<b>The Point Value:</b> {{childQuestionInfo?.value}} <br>
+<b>Your Score:</b> {{ childScore }} <br><br>
+
+What is: <input type="text" [(ngModel)]="userAnswer"> <button (click)="scoreRound()">submit answer</button>

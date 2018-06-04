@@ -8,23 +8,42 @@ import { DataService } from './data.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'Jeopardy';
 
   questionInfo;
+  score = 0;
 
   constructor(private DataService: DataService){}
 
   getQuestionInfo(){
     this.DataService.getQuestionInfo()
       .subscribe(
-        questionInfo => {
-          this.questionInfo = questionInfo[0];
+        (apiResults) => {
+          this.questionInfo = apiResults[0];
+          console.log(this.questionInfo.answer)
         }
       )
   }
 
   ngOnInit(){
     this.getQuestionInfo()
+  }
+
+  updateScore(usersAnswer){
+
+    if (!usersAnswer) {
+      alert("submit an answer dummy!")
+      return false;
+    }
+  
+    if (usersAnswer.toLowerCase() == this.questionInfo.answer.toLowerCase()) {
+      this.score += this.questionInfo.value;
+    } else {
+      this.score -= this.questionInfo.value;
+    }
+
+    this.getQuestionInfo();
+
   }
 
 
