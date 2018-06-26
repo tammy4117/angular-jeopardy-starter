@@ -9,6 +9,8 @@ import { DataService } from './data.service'
 })
 export class AppComponent implements OnInit {
   title = 'app';
+  score = 0;
+  userAnswer
 
   questionInfo;
 
@@ -27,5 +29,12 @@ export class AppComponent implements OnInit {
     this.getQuestionInfo()
   }
 
-
+  grade(userAnswer){
+    if(userAnswer.toLowerCase() == this.questionInfo.answer.toLowerCase()){
+      this.score += this.questionInfo.value;
+    } else {
+      this.score -= this.questionInfo.value;
+    }
+    this.getQuestionInfo()
+  }
 }

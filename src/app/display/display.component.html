@@ -1,0 +1,16 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+</div>
+
+<b>The Question:</b> {{otherQuestionInfo?.question}} <br>
+<b>The Category:</b> {{otherQuestionInfo?.category?.title}} <br>
+<b>Value:       </b> {{otherQuestionInfo?.value}} <br>
+<b>Your Score:  </b> {{otherScore}} <br>
+
+<br>
+
+<input [(ngModel)]="userAnswer" type ="text"><button (click)=grade()>Submit</button>
+<b>The Answer:  </b> {{otherQuestionInfo?.answer}}
